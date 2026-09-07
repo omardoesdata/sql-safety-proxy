@@ -44,6 +44,17 @@ A client connection to port 5433 confirms traffic is passing through OhMyDB befo
 
 Because the UPDATE has no WHERE clause, OhMyDB evaluates it as a potentially full-table mutation and applies the configured safety policy before execution.
 
+## Expected blocked-query output
+
+For an UPDATE without a WHERE clause, the client should receive a blocked-query response describing the policy decision.
+
+Typical result:
+
+    Query blocked by OhMyDB
+    Severity: CRITICAL
+    Operation: UPDATE
+
+The exact wording may vary with configuration, but the mutation should not reach the backend when the active policy blocks it.
 ## Verify the database
 
     SELECT COUNT(*) AS inactive_customers
