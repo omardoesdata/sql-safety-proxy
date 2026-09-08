@@ -8,6 +8,15 @@ This demo shows the core OhMyDB safety flow against PostgreSQL:
 4. The query is blocked before it modifies the database.
 5. A follow-up query verifies that the data remained unchanged.
 
+## Safe demo checklist
+
+Before running the walkthrough:
+
+- use a disposable local database
+- never point the demo at production
+- reset demo data before repeating the mutation test
+- confirm the client is connecting through the OhMyDB proxy port
+- keep backups and normal database safeguards in place
 ## Start OhMyDB
 
     ohmydb --version
