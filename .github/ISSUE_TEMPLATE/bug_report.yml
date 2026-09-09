@@ -1,34 +1,71 @@
 name: Bug report
-description: Report reproducible incorrect behavior
-title: "[Bug]: "
-labels: ["bug"]
+description: Report reproducible problems with OhMyDB
+title: "[Bug] "
+labels:
+  - bug
 body:
   - type: markdown
     attributes:
-      value: "Do not include credentials, private SQL, production data, or vulnerability details. Use a private Security Advisory for security issues."
+      value: |
+        Thanks for taking the time to report an OhMyDB issue.
+
   - type: input
     id: version
     attributes:
-      label: Version
-      placeholder: 0.1.0-alpha
+      label: OhMyDB version
+      placeholder: "e.g. v1.1.0"
     validations:
       required: true
+
+  - type: dropdown
+    id: database
+    attributes:
+      label: Database
+      options:
+        - PostgreSQL
+        - MySQL/MariaDB
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      placeholder: "e.g. 3.13"
+    validations:
+      required: true
+
   - type: textarea
     id: description
     attributes:
       label: What happened?
+      description: Describe the behavior you observed.
     validations:
       required: true
+
   - type: textarea
     id: reproduce
     attributes:
-      label: Minimal reproduction
+      label: Steps to reproduce
+      description: Include the smallest reproducible sequence you can.
+      placeholder: |
+        1. Start OhMyDB with...
+        2. Connect using...
+        3. Run...
     validations:
       required: true
+
   - type: textarea
-    id: environment
+    id: expected
     attributes:
-      label: Environment
-      description: OS, Python, PostgreSQL, and database driver versions
+      label: Expected behavior
     validations:
       required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Remove passwords, tokens, connection strings, and other secrets before posting.
+      render: shell
