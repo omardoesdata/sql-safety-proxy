@@ -1,0 +1,53 @@
+name: Feature request
+description: Suggest an improvement or new capability for OhMyDB
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve OhMyDB.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What problem are you trying to solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+      description: Describe the feature or behavior you would like to see.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - PostgreSQL
+        - MySQL/MariaDB
+        - Policy engine
+        - CLI
+        - Docker / deployment
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional. Mention any workaround or alternative approach you already tried.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add examples, logs, screenshots, or implementation ideas if useful.
