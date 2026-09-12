@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Security issue
+    url: https://github.com/omardoesdata/ohmydb-proxy/security
+    about: Please use the repository security guidance for vulnerabilities or sensitive reports.
+
+  - name: OhMyDB documentation
+    url: https://github.com/omardoesdata/ohmydb-proxy#readme
+    about: Check the README and demo guide before opening an issue.
+
+  - name: Reproducible PostgreSQL demo
+    url: https://github.com/omardoesdata/ohmydb-proxy/blob/main/docs/DEMO.md
+    about: Use the demo guide to verify expected OhMyDB behavior locally.
